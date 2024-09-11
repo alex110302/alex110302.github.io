@@ -38,6 +38,11 @@
     padding-left: 15px;
 }
 
+#welcome{
+    text-align: center;
+    color: whitesmoke;
+}
+
 #funnyimage{
     border-style: inset;
     border-color: rgb(172, 255, 255);
