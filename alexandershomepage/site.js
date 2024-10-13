@@ -63,3 +63,43 @@ previousButton.addEventListener('click' ,() => {
     currentImage--
     showImages()
 })
+
+//code for todo lsit
+const todoList = document.querySelector('.todo-list')
+
+const inputNewTodo = document.querySelector('#todoListInputs input')
+
+const buttonAddNewTodo = document.querySelector('#todoListInputs button')
+const clearTodo = document.querySelector('#clearTodo #buttonClear button')
+const clearDoneTodos = document.querySelector('#clearTodo #buttonDoneClear button') //will get to this eventually. should clear the done tasks
+
+const renderTodos = () => { 
+    const todos = JSON.parse(localStorage.getItem('todoList')) || []
+    
+    todoList.innerHTML = ''
+    
+    if (inputNewTodo.value !== '') todos.push({ text: inputNewTodo.value, completed: false})
+        
+    localStorage.setItem('todoList', JSON.stringify(todos))
+  
+    todos.filter(todo => { if (todo.completed) todoList.innerHTML = ''      
+        const li = document.createElement('li')
+        li.style.listStyleType = 'none'
+        li.style.color = 'lightblue'
+        li.style.fontSize = '20px'
+        li.textContent = todo.text
+        todoList.append(li)
+    })
+        
+    inputNewTodo.value = ''
+}
+
+renderTodos()
+
+buttonAddNewTodo.addEventListener('click', () => renderTodos())
+
+clearTodo.addEventListener('click', () => {
+    localStorage.removeItem('todoList')
+    renderTodos() 
+})
+

@@ -23,7 +23,7 @@
     </div>
     <div class="left">
         <nav>
-            <ul>
+            <ul class="navigation">
                 <li id="noDot"><a href="index.html">Home</a></li>
                 <li id="noDot"><a href="funstuff.html">Fun Stuff</a></li>
             </ul>
@@ -38,7 +38,24 @@
         <div id="buttons">
             <button id="prev">Previous</button>
             <button id="next">Next</button>
-        </div>        
+        </div>    
+        <div class="middleContent">
+            <section id="toDoContent">
+                <section id="todoListInputs">
+                    <input type="text" id="new-todo" placeholder="Add a new item">
+                    <button type="button" id="addNewToDo">Add To Do</button>
+                </section>
+                <section>
+                    <ul class="todo-list">
+                        <!-- List items will go here -->
+                    </ul>
+                </section>
+                <section id="clearTodo">
+                    <div id="buttonClear"><button>Clear To Do</button></div>
+                    <div id="buttonClearDone"><button>Clear Done</button></div>
+                </section>
+            </section>
+        </div>    
     </div>
     <div class="right">
     </div>
