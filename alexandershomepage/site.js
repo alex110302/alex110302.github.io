@@ -82,14 +82,14 @@ const renderTodos = () => {
         
     localStorage.setItem('todoList', JSON.stringify(todos))
   
-    todos.filter(todo => { if (todo.completed) todoList.innerHTML = ''      
+    todos.filter(todo => { if (!todo.completed) {      
         const li = document.createElement('li')
         li.style.listStyleType = 'none'
         li.style.color = 'lightblue'
         li.style.fontSize = '20px'
         li.textContent = todo.text
         todoList.append(li)
-    })
+    }})
         
     inputNewTodo.value = ''
 }
@@ -99,6 +99,7 @@ renderTodos()
 buttonAddNewTodo.addEventListener('click', () => renderTodos())
 
 clearTodo.addEventListener('click', () => {
+    inputNewTodo.value = ''
     localStorage.removeItem('todoList')
     renderTodos() 
 })
