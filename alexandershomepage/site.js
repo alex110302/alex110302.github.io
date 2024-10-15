@@ -38,8 +38,7 @@ const getRandomPokemon = async () => {
 }
 
 const renderPokemon = async () => {
-    pokemon = await getRandomPokemon()
-    console.log(pokemon)
+    const pokemon = await getRandomPokemon()
 
     const img = document.createElement('img')
     console.log(pokemon.sprites.front_default)
