@@ -1,6 +1,6 @@
 const hours = new Date().getHours() // get the current hour
 const minutes = new Date().getMinutes()
-
+    
 const time = {
     hour: hours,
     minute: minutes 
@@ -44,6 +44,7 @@ const renderPokemon = async () => {
     console.log(pokemon.sprites.front_default)
     img.src = pokemon.sprites.front_default
     img.alt = pokemon.name
+    img.style.height = '200px'   
     randomPokemon.append(img)
 }
 
